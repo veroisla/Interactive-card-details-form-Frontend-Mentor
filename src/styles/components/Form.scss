@@ -1,2 +1,66 @@
 @import "../core/reset.scss";
 @import "../core/vars.scss";
+
+.form {
+    
+    &__sectionForm {
+      margin: 30px 20px 30px 20px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__label {
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 8px;
+        color: $--color-super-dark-violet;
+        font-size: 12px;
+    }
+
+    &__input {
+        border: 1px solid $--color-light-violet;
+        border-radius: 7px;
+        padding: 8px;
+        margin-bottom: 15px;
+    }
+
+    &__input::placeholder {
+        color: $--color-light-violet;
+       }
+
+       //CONTAINER DATE AND CVC
+
+    &__containerDateAndCvc {
+        display: flex;
+        flex-direction: row;
+    }
+
+       //INPUT DATE
+
+    &__input--containerDate {
+        display: flex;
+        flex-direction: column;
+    } 
+
+    &__date {
+        display: flex;
+    }
+
+    &__input--date {
+        width: 70px;
+        margin-right: 10px;
+       }
+
+      //CONTAINER CVC
+
+    &__containerCvc {
+        display: flex;
+        flex-direction: column;
+    }
+
+      //INPUT CVC
+
+    &__input--cvc {
+        width: 150px;
+    }
+}
