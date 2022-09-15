@@ -4,7 +4,7 @@
 .form {
     
     &__sectionForm {
-      margin: 30px 20px 30px 20px;
+      margin: 180px 20px 30px 20px;
       display: flex;
       flex-direction: column;
     }
@@ -14,7 +14,7 @@
         letter-spacing: 2px;
         margin-bottom: 8px;
         color: $--color-super-dark-violet;
-        font-size: 12px;
+        
     }
 
     &__input {
@@ -22,6 +22,11 @@
         border-radius: 7px;
         padding: 8px;
         margin-bottom: 15px;
+
+        &:focus-visible {
+           outline-color: $--color-gradient-purple;
+        }
+        TODO:MAKE GRADIENT BORDER COLOR OF INPUT
     }
 
     &__input::placeholder {
@@ -40,6 +45,7 @@
     &__input--containerDate {
         display: flex;
         flex-direction: column;
+        margin-right: 30px;
     } 
 
     &__date {
@@ -47,7 +53,7 @@
     }
 
     &__input--date {
-        width: 70px;
+        width: 90px;
         margin-right: 10px;
        }
 
@@ -61,6 +67,6 @@
       //INPUT CVC
 
     &__input--cvc {
-        width: 150px;
+        width: 120px;
     }
 }

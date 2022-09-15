@@ -1,0 +1,37 @@
+@import "../core/reset.scss";
+@import "../core/vars.scss";
+
+.preview {
+    background-image: url(../../images/bg-main-mobile.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 30vh;
+
+    &__cardsContainer {
+        position: relative;
+        height: 120%;
+        padding: 20px;
+    }
+
+    &__cardFront {
+       position: absolute; 
+       background-image: url(../../images/bg-card-front.png);
+       background-size: contain;
+       background-repeat: no-repeat;
+       height: 42vw;
+       width: 80vw;
+       bottom: 0;
+       z-index: 10;
+    }
+
+    &__cardBack {
+        position: absolute;
+        background-image: url(../../images/bg-card-back.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 42vw;
+        width: 80vw;
+        margin-top: 25px;
+        margin-left: 40px;
+    }
+}
