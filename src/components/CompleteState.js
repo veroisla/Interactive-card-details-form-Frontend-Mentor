@@ -9,9 +9,13 @@ function CompleteState() {
     <>
       <CardPreview />
       <section className="complete">
-        <img src={iconComplete} alt="Icon Complete Card" />
-        <h2>thank you</h2>
-        <p>We´ve added your card details</p>
+        <img
+          className="complete__icon"
+          src={iconComplete}
+          alt="Icon Complete Card"
+        />
+        <h2 className="complete__thankText">thank you!</h2>
+        <p className="complete__addedText">We´ve added your card details</p>
         <Button buttonText={'Continue'} />
       </section>
     </>
