@@ -6,15 +6,22 @@ function CardPreview() {
   return (
     <section className="preview">
       <div className="preview__cardsContainer">
+        {/* PREVIEW CARD FRONT */}
         <div className="preview__cardFront">
-          <img src={cardLogo} alt="" />
-          <span>0000 0000 0000 0000</span>
-          <span>JANE APPLESEED</span>
-          <div>
-            <span>00 </span>/<span> 00</span>
+          <img className="preview__cardLogo" src={cardLogo} alt="Card Logo" />
+          <span className="preview__cardNumber">0000 0000 0000 0000</span>
+          <div className="preview__nameAndDate">
+            <span className="preview__name">jane appleseed</span>
+            <div>
+              <span className="preview__date">00 </span>/
+              <span className="preview__date"> 00</span>
+            </div>
           </div>
         </div>
-        <div className="preview__cardBack"></div>
+        {/* PREVIEW CARD BACK */}
+        <div className="preview__cardBack">
+          <span className="preview__cvc">000</span>
+        </div>
       </div>
     </section>
   );
