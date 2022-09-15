@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/components/Form.scss';
-import ConfirmButton from '../components/ConfirmButton';
+import Button from '../components/Button';
 
 function Form() {
   return (
@@ -62,8 +62,7 @@ function Form() {
             />
           </div>
         </div>
-
-        <ConfirmButton />
+        <Button buttonText={'Confirm'} />
       </form>
     </section>
   );
