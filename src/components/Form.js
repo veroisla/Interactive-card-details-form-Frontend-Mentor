@@ -2,10 +2,23 @@ import React from 'react';
 import '../styles/components/Form.scss';
 import Button from '../components/Button';
 
-function Form() {
+function Form(props) {
+  const handleSubmit = () => {
+    props.handleSubmit();
+  };
+  const handleInput = (ev) => {
+    const inputValue = ev.target.value;
+    const inputChanged = ev.target.name;
+    props.handleInput(inputValue, inputChanged);
+  };
   return (
     <section className="form">
-      <form action="" method="post" className="form__sectionForm">
+      <form
+        action=""
+        method="post"
+        className="form__sectionForm"
+        onSubmit={handleSubmit}
+      >
         <label className="form__label" htmlFor="name">
           cardholder name
         </label>
@@ -15,6 +28,8 @@ function Form() {
           name="name"
           id="name"
           placeholder="Jane Appleseed"
+          onChange={handleInput}
+          value={props.dataUser.name}
         />
         <label className="form__label" htmlFor="card number">
           card number
@@ -22,9 +37,11 @@ function Form() {
         <input
           className="form__input"
           type="text"
-          name="card number"
-          id="card number"
+          name="cardNumber"
+          id="cardNumber"
           placeholder="1234 5678 9123 0000"
+          onChange={handleInput}
+          value={props.dataUser.cardNumber}
         />
         <div className="form__containerDateAndCvc">
           <div className="form__input--containerDate">
@@ -35,16 +52,20 @@ function Form() {
               <input
                 className="form__input form__input--date"
                 type="text"
-                name="exp. date"
-                id="exp. date"
+                name="month"
+                id="month"
                 placeholder="MM"
+                onChange={handleInput}
+                value={props.dataUser.month}
               />
               <input
                 className="form__input form__input--date"
                 type="text"
-                name="exp. date"
-                id="exp. date"
+                name="year"
+                id="year"
                 placeholder="YY"
+                onChange={handleInput}
+                value={props.dataUser.year}
               />
             </div>
           </div>
@@ -59,6 +80,8 @@ function Form() {
               name="cvc"
               id="cvc"
               placeholder="123"
+              onChange={handleInput}
+              value={props.dataUser.cvc}
             />
           </div>
         </div>

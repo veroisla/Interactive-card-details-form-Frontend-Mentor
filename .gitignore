@@ -23,6 +23,6 @@ yarn-debug.log*
 yarn-error.log*
 
 # others
-style-guide.md
-package-lock.json
-package.json
+.style-guide.md
+.package-lock.json
+.package.json
