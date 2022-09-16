@@ -11,6 +11,7 @@ function Form(props) {
     const inputChanged = ev.target.name;
     props.handleInput(inputValue, inputChanged);
   };
+
   return (
     <section className="form">
       <form
@@ -18,6 +19,7 @@ function Form(props) {
         method="post"
         className="form__sectionForm"
         onSubmit={handleSubmit}
+        name="myForm"
       >
         <label className="form__label" htmlFor="name">
           cardholder name
@@ -30,7 +32,10 @@ function Form(props) {
           placeholder="Jane Appleseed"
           onChange={handleInput}
           value={props.dataUser.name}
+          onBlur={props.handleBlur}
+          required
         />
+        {props.errors.name && <p>This fields is required</p>}
         <label className="form__label" htmlFor="card number">
           card number
         </label>
@@ -42,6 +47,8 @@ function Form(props) {
           placeholder="1234 5678 9123 0000"
           onChange={handleInput}
           value={props.dataUser.cardNumber}
+          onBlur={props.handleBlur}
+          required
         />
         <div className="form__containerDateAndCvc">
           <div className="form__input--containerDate">
@@ -57,6 +64,8 @@ function Form(props) {
                 placeholder="MM"
                 onChange={handleInput}
                 value={props.dataUser.month}
+                onBlur={props.handleBlur}
+                required
               />
               <input
                 className="form__input form__input--date"
@@ -66,6 +75,8 @@ function Form(props) {
                 placeholder="YY"
                 onChange={handleInput}
                 value={props.dataUser.year}
+                onBlur={props.handleBlur}
+                required
               />
             </div>
           </div>

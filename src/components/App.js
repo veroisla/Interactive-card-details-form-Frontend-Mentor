@@ -16,9 +16,29 @@ function App() {
     cvc: '',
   });
 
+  //
+  const [errors, setErrors] = useState({});
+
+  const handleBlur = (e) => {
+    handleInput(e);
+    setErrors(validationsForm(dataUser));
+  };
+
+  const validationsForm = (dataUser) => {
+    let errors = {};
+
+    if (!dataUser.name.trim()) {
+      errors.name = 'el campo nombre es requerido';
+    }
+
+    return errors;
+  };
+
+  //
+
   //FUNCIÓN PREVENIR ENVÍO POR DEFECTO
   const handleSubmit = (ev) => {
-    ev.preventDefault();
+    ev.preventDefault(ev);
   };
 
   //FUNCIÓN VALOR INPUT
@@ -29,6 +49,7 @@ function App() {
     };
     setDataUser(newCard);
   };
+
   return (
     <>
       <Routes>
@@ -41,6 +62,8 @@ function App() {
                 handleSubmit={handleSubmit}
                 handleInput={handleInput}
                 dataUser={dataUser}
+                handleBlur={handleBlur}
+                errors={errors}
               />
             </>
           }
@@ -49,7 +72,7 @@ function App() {
           path="/completeCard"
           element={
             <>
-              <CompleteState />
+              <CompleteState dataUser={dataUser} />
             </>
           }
         />

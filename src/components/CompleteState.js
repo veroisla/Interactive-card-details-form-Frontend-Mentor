@@ -4,10 +4,10 @@ import iconComplete from '../images/icon-complete.svg';
 import CardPreview from './CardPreview';
 import Button from '../components/Button';
 
-function CompleteState() {
+function CompleteState(props) {
   return (
     <>
-      <CardPreview />
+      <CardPreview dataUser={props.dataUser} />
       <section className="complete">
         <img
           className="complete__icon"
