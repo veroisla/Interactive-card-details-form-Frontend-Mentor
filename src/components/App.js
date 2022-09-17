@@ -26,15 +26,37 @@ function App() {
 
   const validationsForm = (dataUser) => {
     let errors = {};
+    let regexName = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
 
     if (!dataUser.name.trim()) {
-      errors.name = 'el campo nombre es requerido';
+      errors.name = 'Can´t be blank';
+    } else if (!regexName.test(dataUser.name.trim())) {
+      errors.name = 'Wrong format, letters only';
+    }
+    //---> Correcto
+
+    if (!dataUser.cardNumber.trim()) {
+      errors.cardNumber = 'Can´t be blank';
     }
 
+    // if (!dataUser.cardNumber.trim()) {
+    //   errors.cardNumber = 'Can´t be blank';
+    // }
+    // if (!dataUser.month.trim()) {
+    //   errors.month = 'Can´t be blank';
+    // }
+    // if (!dataUser.year.trim()) {
+    //   errors.year = 'Can´t be blank';
+    // }
+    // if (!dataUser.cvc.trim()) {
+    //   errors.cvc = 'Can´t be blank';
+    // } else if (!regex.test(dataUser.cvc.trim())) {
+    //   errors.cvc = 'Wrong format, only 3 numbers';
+    // } else {
+    //   console.log('Formulario correcto');
+    // }
     return errors;
   };
-
-  //
 
   //FUNCIÓN PREVENIR ENVÍO POR DEFECTO
   const handleSubmit = (ev) => {

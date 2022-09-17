@@ -35,7 +35,9 @@ function Form(props) {
           onBlur={props.handleBlur}
           required
         />
-        {props.errors.name && <p>This fields is required</p>}
+        {props.errors.name && (
+          <p className="form__error">{props.errors.name}</p>
+        )}
         <label className="form__label" htmlFor="card number">
           card number
         </label>
@@ -48,8 +50,13 @@ function Form(props) {
           onChange={handleInput}
           value={props.dataUser.cardNumber}
           onBlur={props.handleBlur}
+          maxLength="19"
+          minLength="16"
           required
         />
+        {props.errors.cardNumber && (
+          <p className="form__error">{props.errors.cardNumber}</p>
+        )}
         <div className="form__containerDateAndCvc">
           <div className="form__input--containerDate">
             <label className="form__label" htmlFor="exp. date">
@@ -65,8 +72,14 @@ function Form(props) {
                 onChange={handleInput}
                 value={props.dataUser.month}
                 onBlur={props.handleBlur}
+                maxLength="2"
+                minLength="2"
                 required
               />
+              {props.errors.month && (
+                <p className="form__error">{props.errors.month}</p>
+              )}
+
               <input
                 className="form__input form__input--date"
                 type="text"
@@ -76,8 +89,13 @@ function Form(props) {
                 onChange={handleInput}
                 value={props.dataUser.year}
                 onBlur={props.handleBlur}
+                maxLength="2"
+                minLength="2"
                 required
               />
+              {props.errors.year && (
+                <p className="form__error">{props.errors.year}</p>
+              )}
             </div>
           </div>
           <div className="form__containerCvc">
@@ -93,7 +111,13 @@ function Form(props) {
               placeholder="123"
               onChange={handleInput}
               value={props.dataUser.cvc}
+              onBlur={props.handleBlur}
+              maxLength="3"
+              minLength="3"
             />
+            {props.errors.cvc && (
+              <p className="form__error">{props.errors.cvc}</p>
+            )}
           </div>
         </div>
         <Button buttonText={'Confirm'} />
