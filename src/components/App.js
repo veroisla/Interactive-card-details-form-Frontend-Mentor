@@ -16,7 +16,7 @@ function App() {
     cvc: '',
   });
 
-  //
+  //VALIDACIÓN FORMULARIO
   const [errors, setErrors] = useState({});
 
   const handleBlur = (e) => {
@@ -27,6 +27,10 @@ function App() {
   const validationsForm = (dataUser) => {
     let errors = {};
     let regexName = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
+    let regexCardNumber = /^[0-9]{16}$/;
+    let regexDate = /^[0-9]{2}$/;
+    let regexNumber = /[0-9]$/;
+    let regexCvc = /^[0-9]{3}$/;
 
     if (!dataUser.name.trim()) {
       errors.name = 'Can´t be blank';
@@ -37,24 +41,36 @@ function App() {
 
     if (!dataUser.cardNumber.trim()) {
       errors.cardNumber = 'Can´t be blank';
+    } else if (!regexCardNumber.test(dataUser.cardNumber.trim())) {
+      errors.cardNumber = 'Minimo 16 numeros';
     }
+    // ---> Más o menos
 
-    // if (!dataUser.cardNumber.trim()) {
-    //   errors.cardNumber = 'Can´t be blank';
-    // }
-    // if (!dataUser.month.trim()) {
-    //   errors.month = 'Can´t be blank';
-    // }
-    // if (!dataUser.year.trim()) {
-    //   errors.year = 'Can´t be blank';
-    // }
-    // if (!dataUser.cvc.trim()) {
-    //   errors.cvc = 'Can´t be blank';
-    // } else if (!regex.test(dataUser.cvc.trim())) {
-    //   errors.cvc = 'Wrong format, only 3 numbers';
-    // } else {
-    //   console.log('Formulario correcto');
-    // }
+    if (!dataUser.month.trim()) {
+      errors.month = 'Can´t be blank';
+    } else if (!regexNumber.test(dataUser.month.trim())) {
+      errors.month = 'wrong format, numbers only';
+    } else if (!regexDate.test(dataUser.month.trim())) {
+      errors.month = 'wrong format, need two numbers';
+    }
+    // ---> Más o menos
+
+    if (!dataUser.year.trim()) {
+      errors.year = 'Can´t be blank';
+    } else if (!regexNumber.test(dataUser.year.trim())) {
+      errors.year = 'wrong format, numbers only';
+    } else if (!regexDate.test(dataUser.year.trim())) {
+      errors.year = 'wrong format, need two numbers';
+    }
+    // ---> Más o menos
+
+    if (!dataUser.cvc.trim()) {
+      errors.cvc = 'Can´t be blank';
+    } else if (!regexNumber.test(dataUser.cvc.trim())) {
+      errors.cvc = 'Wrong format, numbers only';
+    } else if (!regexCvc.test(dataUser.cvc.trim())) {
+      errors.cvc = 'Wrong format, need 3 numbers';
+    }
     return errors;
   };
 
