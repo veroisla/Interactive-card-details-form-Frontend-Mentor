@@ -1,9 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
-
 import Form from '../components/Form';
-
 import CardPreview from '../components/CardPreview';
 import CompleteState from './CompleteState';
 
@@ -77,6 +75,7 @@ function App() {
   //FUNCIÓN PREVENIR ENVÍO POR DEFECTO
   const handleSubmit = (ev) => {
     ev.preventDefault(ev);
+    validationsForm(setErrors);
   };
 
   //FUNCIÓN VALOR INPUT

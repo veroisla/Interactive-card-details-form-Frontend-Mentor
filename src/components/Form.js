@@ -3,9 +3,6 @@ import '../styles/components/Form.scss';
 import Button from '../components/Button';
 
 function Form(props) {
-  const handleSubmit = () => {
-    props.handleSubmit();
-  };
   const handleInput = (ev) => {
     const inputValue = ev.target.value;
     const inputChanged = ev.target.name;
@@ -16,9 +13,9 @@ function Form(props) {
     <section className="form">
       <form
         action=""
-        method="post"
+        method="POST"
         className="form__sectionForm"
-        onSubmit={handleSubmit}
+        onSubmit={props.handleSubmit}
         name="myForm"
       >
         <label className="form__label" htmlFor="name">
@@ -32,8 +29,7 @@ function Form(props) {
           placeholder="Jane Appleseed"
           onChange={handleInput}
           value={props.dataUser.name}
-          onBlur={props.handleBlur}
-          required
+          // onBlur={props.handleBlur}
         />
         {props.errors.name && (
           <p className="form__error">{props.errors.name}</p>
@@ -49,10 +45,9 @@ function Form(props) {
           placeholder="1234 5678 9123 0000"
           onChange={handleInput}
           value={props.dataUser.cardNumber}
-          onBlur={props.handleBlur}
+          // onBlur={props.handleBlur}
           maxLength="19"
           minLength="16"
-          required
         />
         {props.errors.cardNumber && (
           <p className="form__error">{props.errors.cardNumber}</p>
@@ -71,10 +66,9 @@ function Form(props) {
                 placeholder="MM"
                 onChange={handleInput}
                 value={props.dataUser.month}
-                onBlur={props.handleBlur}
+                // onBlur={props.handleBlur}
                 maxLength="2"
                 minLength="2"
-                required
               />
               {props.errors.month && (
                 <p className="form__error">{props.errors.month}</p>
@@ -88,10 +82,9 @@ function Form(props) {
                 placeholder="YY"
                 onChange={handleInput}
                 value={props.dataUser.year}
-                onBlur={props.handleBlur}
+                // onBlur={props.handleBlur}
                 maxLength="2"
                 minLength="2"
-                required
               />
               {props.errors.year && (
                 <p className="form__error">{props.errors.year}</p>
@@ -111,7 +104,7 @@ function Form(props) {
               placeholder="123"
               onChange={handleInput}
               value={props.dataUser.cvc}
-              onBlur={props.handleBlur}
+              // onBlur={props.handleBlur}
               maxLength="3"
               minLength="3"
             />
@@ -120,7 +113,12 @@ function Form(props) {
             )}
           </div>
         </div>
-        <Button buttonText={'Confirm'} />
+        <Button
+          buttonText={'Confirm'}
+          dataUser={props.dataUser}
+          handleBlur={props.handleBlur}
+          errors={props.errors}
+        />
       </form>
     </section>
   );

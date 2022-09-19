@@ -79,3 +79,10 @@
         letter-spacing: 1px;
     }
 }
+
+
+@media all and (min-width:768px) {
+    .preview {
+        background-image: url(../../images/bg-main-desktop.png);
+    }
+}
