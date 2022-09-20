@@ -69,4 +69,8 @@
     &__input--cvc {
         width: 120px;
     }
+
+    &__error {
+        color: $--color-red;
+    }
 }

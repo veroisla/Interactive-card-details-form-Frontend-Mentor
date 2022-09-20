@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/components/Form.scss';
-import Button from '../components/Button';
+import Button from './Button';
 
 function Form(props) {
   const handleInput = (ev) => {
@@ -30,6 +30,7 @@ function Form(props) {
           onChange={handleInput}
           value={props.dataUser.name}
           // onBlur={props.handleBlur}
+          maxLength="32"
         />
         {props.errors.name && (
           <p className="form__error">{props.errors.name}</p>
@@ -42,12 +43,11 @@ function Form(props) {
           type="text"
           name="cardNumber"
           id="cardNumber"
-          placeholder="1234 5678 9123 0000"
+          placeholder="e.g. 1234 5678 9123 0000"
           onChange={handleInput}
           value={props.dataUser.cardNumber}
           // onBlur={props.handleBlur}
           maxLength="19"
-          minLength="16"
         />
         {props.errors.cardNumber && (
           <p className="form__error">{props.errors.cardNumber}</p>
@@ -106,7 +106,6 @@ function Form(props) {
               value={props.dataUser.cvc}
               // onBlur={props.handleBlur}
               maxLength="3"
-              minLength="3"
             />
             {props.errors.cvc && (
               <p className="form__error">{props.errors.cvc}</p>

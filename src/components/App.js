@@ -28,6 +28,7 @@ function App() {
     let regexCardNumber = /^[0-9]{16}$/;
     let regexDate = /^[0-9]{2}$/;
     let regexNumber = /[0-9]$/;
+    let regexYear = /^[2-9][0-9]$/;
     let regexCvc = /^[0-9]{3}$/;
 
     if (!dataUser.name.trim()) {
@@ -40,7 +41,7 @@ function App() {
     if (!dataUser.cardNumber.trim()) {
       errors.cardNumber = 'Can´t be blank';
     } else if (!regexCardNumber.test(dataUser.cardNumber.trim())) {
-      errors.cardNumber = 'Minimo 16 numeros';
+      errors.cardNumber = 'Wrong format, 16 numbers only';
     }
     // ---> Más o menos
 
@@ -57,8 +58,8 @@ function App() {
       errors.year = 'Can´t be blank';
     } else if (!regexNumber.test(dataUser.year.trim())) {
       errors.year = 'wrong format, numbers only';
-    } else if (!regexDate.test(dataUser.year.trim())) {
-      errors.year = 'wrong format, need two numbers';
+    } else if (!regexYear.test(dataUser.year.trim())) {
+      errors.year = 'Invalid date';
     }
     // ---> Más o menos
 
