@@ -26,7 +26,7 @@ function App() {
     let errors = {};
     let regexName = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
     let regexCardNumber = /^[0-9]{16}$/;
-    let regexDate = /^[0-9]{2}$/;
+    let regexMonth = /^0[1-9]|1[0-2]$/;
     let regexNumber = /[0-9]$/;
     let regexYear = /^[2-9][0-9]$/;
     let regexCvc = /^[0-9]{3}$/;
@@ -34,30 +34,30 @@ function App() {
     if (!dataUser.name.trim()) {
       errors.name = 'Can´t be blank';
     } else if (!regexName.test(dataUser.name.trim())) {
-      errors.name = 'Wrong format, letters only';
+      errors.name = 'Invalid  format, letters only';
     }
     //---> Correcto
 
     if (!dataUser.cardNumber.trim()) {
       errors.cardNumber = 'Can´t be blank';
     } else if (!regexCardNumber.test(dataUser.cardNumber.trim())) {
-      errors.cardNumber = 'Wrong format, 16 numbers only';
+      errors.cardNumber = 'Invalid  format, 16 numbers only';
     }
     // ---> Más o menos
 
     if (!dataUser.month.trim()) {
       errors.month = 'Can´t be blank';
     } else if (!regexNumber.test(dataUser.month.trim())) {
-      errors.month = 'wrong format, numbers only';
-    } else if (!regexDate.test(dataUser.month.trim())) {
-      errors.month = 'wrong format, need two numbers';
+      errors.month = 'Invalid format, numbers only';
+    } else if (!regexMonth.test(dataUser.month.trim())) {
+      errors.month = 'Invalid month number 1-12';
     }
     // ---> Más o menos
 
     if (!dataUser.year.trim()) {
       errors.year = 'Can´t be blank';
     } else if (!regexNumber.test(dataUser.year.trim())) {
-      errors.year = 'wrong format, numbers only';
+      errors.year = 'Invalid format, numbers only';
     } else if (!regexYear.test(dataUser.year.trim())) {
       errors.year = 'Invalid date';
     }
@@ -66,9 +66,9 @@ function App() {
     if (!dataUser.cvc.trim()) {
       errors.cvc = 'Can´t be blank';
     } else if (!regexNumber.test(dataUser.cvc.trim())) {
-      errors.cvc = 'Wrong format, numbers only';
+      errors.cvc = 'Invalid format, numbers only';
     } else if (!regexCvc.test(dataUser.cvc.trim())) {
-      errors.cvc = 'Wrong format, need 3 numbers';
+      errors.cvc = 'Invalid format, need 3 numbers';
     }
     return errors;
   };
