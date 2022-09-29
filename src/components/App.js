@@ -36,15 +36,12 @@ function App() {
     } else if (!regexName.test(dataUser.name)) {
       errors.name = 'Invalid format';
     }
-    //---> Correcto
 
     if (dataUser.cardNumber.length === 0) {
       errors.cardNumber = 'Can´t be blank';
     } else if (!regexCardNumber.test(dataUser.cardNumber)) {
       errors.cardNumber = '16 numbers only';
     }
-
-    // ---> Más o menos
 
     if (dataUser.month.length === 0) {
       errors.month = 'Can´t be blank';
@@ -53,7 +50,6 @@ function App() {
     } else if (!regexMonth.test(dataUser.month)) {
       errors.month = 'Invalid month';
     }
-    // ---> Más o menos
 
     if (dataUser.year.length === 0) {
       errors.year = 'Can´t be blank';
@@ -62,7 +58,6 @@ function App() {
     } else if (!regexYear.test(dataUser.year)) {
       errors.year = 'Invalid date';
     }
-    // ---> Más o menos
 
     if (dataUser.cvc.length === 0) {
       errors.cvc = 'Can´t be blank';
