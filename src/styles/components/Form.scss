@@ -21,7 +21,7 @@
         border: 1px solid $--color-light-violet;
         border-radius: 7px;
         padding: 8px;
-        margin-bottom: 15px;
+        margin-bottom: 10px;
 
         &:focus-visible {
            outline-color: $--color-gradient-purple;
@@ -52,6 +52,12 @@
         display: flex;
     }
 
+    &__dateAndAlert {
+        display: flex;
+        flex-direction: column;
+    }
+    
+
     &__input--date {
         width: 90px;
         margin-right: 10px;
@@ -72,5 +78,11 @@
 
     &__error {
         color: $--color-red;
+        font-size: 10px;
+        margin-bottom: 5px;
     }
+}
+
+.alert {
+    border: 1px solid red;
 }

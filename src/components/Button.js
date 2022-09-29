@@ -10,7 +10,7 @@ function ConfirmButton(props) {
         type="submit"
         value={props.buttonText}
         className="confirmButton"
-        onClick={props.handleBlur}
+        onClick={props.handleForm}
       />
     </>
   );

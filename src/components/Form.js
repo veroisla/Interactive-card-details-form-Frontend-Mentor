@@ -29,7 +29,6 @@ function Form(props) {
           placeholder="Jane Appleseed"
           onChange={handleInput}
           value={props.dataUser.name}
-          // onBlur={props.handleBlur}
           maxLength="32"
         />
         {props.errors.name && (
@@ -46,51 +45,54 @@ function Form(props) {
           placeholder="e.g. 1234 5678 9123 0000"
           onChange={handleInput}
           value={props.dataUser.cardNumber}
-          // onBlur={props.handleBlur}
           maxLength="19"
         />
         {props.errors.cardNumber && (
           <p className="form__error">{props.errors.cardNumber}</p>
         )}
+
         <div className="form__containerDateAndCvc">
           <div className="form__input--containerDate">
             <label className="form__label" htmlFor="exp. date">
               Exp. Date (MM/YY)
             </label>
             <div className="form__date">
-              <input
-                className="form__input form__input--date"
-                type="text"
-                name="month"
-                id="month"
-                placeholder="MM"
-                onChange={handleInput}
-                value={props.dataUser.month}
-                // onBlur={props.handleBlur}
-                maxLength="2"
-                minLength="2"
-              />
-              {props.errors.month && (
-                <p className="form__error">{props.errors.month}</p>
-              )}
+              <div className="form__dateAndAlert">
+                <input
+                  className="form__input form__input--date"
+                  type="text"
+                  name="month"
+                  id="month"
+                  placeholder="MM"
+                  onChange={handleInput}
+                  value={props.dataUser.month}
+                  maxLength="2"
+                  minLength="2"
+                />
+                {props.errors.month && (
+                  <p className="form__error">{props.errors.month}</p>
+                )}
+              </div>
 
-              <input
-                className="form__input form__input--date"
-                type="text"
-                name="year"
-                id="year"
-                placeholder="YY"
-                onChange={handleInput}
-                value={props.dataUser.year}
-                // onBlur={props.handleBlur}
-                maxLength="2"
-                minLength="2"
-              />
-              {props.errors.year && (
-                <p className="form__error">{props.errors.year}</p>
-              )}
+              <div className="form__dateAndAlert">
+                <input
+                  className="form__input form__input--date"
+                  type="text"
+                  name="year"
+                  id="year"
+                  placeholder="YY"
+                  onChange={handleInput}
+                  value={props.dataUser.year}
+                  maxLength="2"
+                  minLength="2"
+                />
+                {props.errors.year && (
+                  <p className="form__error">{props.errors.year}</p>
+                )}
+              </div>
             </div>
           </div>
+
           <div className="form__containerCvc">
             {' '}
             <label className="form__label" htmlFor="cvc">
@@ -104,7 +106,6 @@ function Form(props) {
               placeholder="123"
               onChange={handleInput}
               value={props.dataUser.cvc}
-              // onBlur={props.handleBlur}
               maxLength="3"
             />
             {props.errors.cvc && (
@@ -115,7 +116,7 @@ function Form(props) {
         <Button
           buttonText={'Confirm'}
           dataUser={props.dataUser}
-          handleBlur={props.handleBlur}
+          handleForm={props.handleForm}
           errors={props.errors}
         />
       </form>
