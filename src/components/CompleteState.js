@@ -1,13 +1,12 @@
 import React from 'react';
 import '../styles/components/CompleteState.scss';
 import iconComplete from '../images/icon-complete.svg';
-import CardPreview from './CardPreview';
+
 import Button from '../components/Button';
 
 function CompleteState(props) {
   return (
     <>
-      <CardPreview dataUser={props.dataUser} />
       <section className="complete">
         <img
           className="complete__icon"
