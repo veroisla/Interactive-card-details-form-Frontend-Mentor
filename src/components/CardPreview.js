@@ -10,7 +10,13 @@ function CardPreview(props) {
         <div className="preview__cardFront">
           <img className="preview__cardLogo" src={cardLogo} alt="Card Logo" />
           <span className="preview__cardNumber">
-            {props.dataUser.cardNumber || '0000 0000 0000 0000'}
+            {props.dataUser.cardNumber
+              .replace(/\s/g, '')
+              .replace(/\D/g, '')
+              //dejar hueco entre numeros tarjeta
+              .replace(/([0-9]{4})/g, '$1 ')
+
+              .trim() || '0000 0000 0000 0000'}
           </span>
           <div className="preview__nameAndDate">
             <span className="preview__name">

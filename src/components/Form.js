@@ -45,7 +45,7 @@ function Form(props) {
           placeholder="e.g. 1234 5678 9123 0000"
           onChange={handleInput}
           value={props.dataUser.cardNumber}
-          maxLength="19"
+          maxLength="16"
         />
         {props.errors.cardNumber && (
           <p className="form__error">{props.errors.cardNumber}</p>
