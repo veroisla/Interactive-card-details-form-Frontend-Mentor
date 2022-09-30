@@ -45,7 +45,7 @@ function App() {
 
     if (dataUser.cardNumber === '') {
       errors.cardNumber = 'Can´t be blank';
-    } else if (!regexCardNumber.test(dataUser.cardNumber.replace(' ', ''))) {
+    } else if (!regexCardNumber.test(dataUser.cardNumber)) {
       errors.cardNumber = '16 numbers only';
     }
     // --> .replace(' ', '') Si el usuario mete un espacio quitalo
