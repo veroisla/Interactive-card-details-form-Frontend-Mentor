@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "./static/css/main.dbfd4412.css",
-    "main.js": "./static/js/main.e5e6caa6.js",
+    "main.css": "./static/css/main.b94416df.css",
+    "main.js": "./static/js/main.2de2b904.js",
+    "static/media/bg-main-desktop.png": "./static/media/bg-main-desktop.806e7aa7b4dbc1d78bc3.png",
     "static/media/bg-card-back.png": "./static/media/bg-card-back.23f68fa3aa3d5b33dfc8.png",
     "static/media/bg-card-front.png": "./static/media/bg-card-front.8153e2ca184402a8385f.png",
     "static/media/bg-main-mobile.jpg": "./static/media/bg-main-mobile.caa4689407777a312ede.jpg",
     "index.html": "./index.html",
-    "static/media/icon-complete.svg": "./static/media/icon-complete.8fd757c0c5c44b1d597ca411400e046d.svg",
     "static/media/card-logo.svg": "./static/media/card-logo.8ca9036515954c3f8191559dce9c7bdf.svg",
-    "main.dbfd4412.css.map": "./static/css/main.dbfd4412.css.map",
-    "main.e5e6caa6.js.map": "./static/js/main.e5e6caa6.js.map"
+    "main.b94416df.css.map": "./static/css/main.b94416df.css.map",
+    "main.2de2b904.js.map": "./static/js/main.2de2b904.js.map"
   },
   "entrypoints": [
-    "static/css/main.dbfd4412.css",
-    "static/js/main.e5e6caa6.js"
+    "static/css/main.b94416df.css",
+    "static/js/main.2de2b904.js"
   ]
 }
