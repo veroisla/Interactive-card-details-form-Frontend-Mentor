@@ -1,0 +1,14 @@
+@import "../core/reset.scss";
+@import "../core/vars.scss";
+
+
+@media all and (min-width: 768px) {
+    .previewAndForm {
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+     align-items: center;
+     
+ } 
+ }
+ 

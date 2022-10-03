@@ -84,5 +84,33 @@
 @media all and (min-width:768px) {
     .preview {
         background-image: url(../../images/bg-main-desktop.png);
+        height: 100vh;
+        width: 35%;
+
+        &__cardsContainer {
+            height: 60vh;
+            width: 100%;
+            margin-left: 250px;
+            margin-top: 150px;
+        }
+
+        //CARD FRONT
+
+        &__cardFront {
+            height: 15.31rem;
+            width: 27.93rem;
+        }
+
+        &__nameAndDate {
+            margin-top: 90px;
+        }
+
+       //CARD BACK
+
+        &__cardBack {
+            height: 15.31rem;
+            width: 27.93rem;
+        }
+        
     }
 }

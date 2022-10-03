@@ -2,7 +2,8 @@ import React from 'react';
 import { useState } from 'react';
 import Form from '../components/Form';
 import CardPreview from '../components/CardPreview';
-import CompleteState from './CompleteState';
+import '../styles/components/App.scss';
+// import CompleteState from './CompleteState';
 
 function App() {
   const [dataUser, setDataUser] = useState({
@@ -103,17 +104,19 @@ function App() {
 
   return (
     <>
-      <CardPreview dataUser={dataUser} />
+      <div className="previewAndForm">
+        <CardPreview dataUser={dataUser} />
 
-      {/* <CompleteState dataUser={dataUser} /> */}
+        {/* <CompleteState dataUser={dataUser} /> */}
 
-      <Form
-        handleSubmit={handleSubmit}
-        handleInput={handleInput}
-        dataUser={dataUser}
-        handleForm={handleForm}
-        errors={errors}
-      />
+        <Form
+          handleSubmit={handleSubmit}
+          handleInput={handleInput}
+          dataUser={dataUser}
+          handleForm={handleForm}
+          errors={errors}
+        />
+      </div>
     </>
   );
 }
