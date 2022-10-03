@@ -9,6 +9,10 @@ function Form(props) {
     props.handleInput(inputValue, inputChanged);
   };
 
+  const handleName = (ev) => {
+    props.validateName(props.setErrors);
+  };
+
   return (
     <section className="form">
       <form
@@ -30,6 +34,7 @@ function Form(props) {
           onChange={handleInput}
           value={props.dataUser.name}
           maxLength="32"
+          onKeyUp={handleName}
         />
         {props.errors.name && (
           <p className="form__error">{props.errors.name}</p>

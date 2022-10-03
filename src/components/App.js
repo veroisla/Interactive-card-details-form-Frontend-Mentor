@@ -38,20 +38,31 @@ function App() {
     setErrors(validationsForm(dataUser));
   };
 
-  const validationsForm = (dataUser) => {
+  const validateName = (dataUser) => {
     let errors = {};
     let regexName = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
+    if (dataUser.name === '') {
+      errors.name = 'Can´t be blank';
+    } else if (!regexName.test(dataUser.name)) {
+      errors.name = 'Invalid format';
+    }
+    return errors;
+  };
+
+  const validationsForm = (dataUser) => {
+    let errors = {};
+
     let regexCardNumber = /[0-9]{16}$/;
     let regexMonth = /^0[1-9]|1[0-2]$/;
     let regexNumber = /[0-9]$/;
     let regexYear = /^[2-9][0-9]$/;
     let regexCvc = /^[0-9]{3}$/;
 
-    if (dataUser.name === '') {
-      errors.name = 'Can´t be blank';
-    } else if (!regexName.test(dataUser.name)) {
-      errors.name = 'Invalid format';
-    }
+    // if (dataUser.name === '') {
+    //   errors.name = 'Can´t be blank';
+    // } else if (!regexName.test(dataUser.name)) {
+    //   errors.name = 'Invalid format';
+    // }
 
     if (dataUser.cardNumber === '') {
       errors.cardNumber = 'Can´t be blank';
@@ -115,6 +126,7 @@ function App() {
           dataUser={dataUser}
           handleForm={handleForm}
           errors={errors}
+          validateName={validateName}
         />
       </div>
     </>
@@ -122,5 +134,3 @@ function App() {
 }
 
 export default App;
-
-//holaaaaa
