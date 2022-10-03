@@ -8,7 +8,7 @@ function ConfirmButton(props) {
         type="submit"
         value={props.buttonText}
         className="confirmButton"
-        onClick={props.handleForm}
+        // onClick={props.handleForm}
       />
     </>
   );
