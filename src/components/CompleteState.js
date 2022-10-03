@@ -7,7 +7,7 @@ import Button from '../components/Button';
 function CompleteState(props) {
   return (
     <>
-      <section className="complete">
+      <section className="complete" id="completeSection">
         <img
           className="complete__icon"
           src={iconComplete}

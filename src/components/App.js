@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import Form from '../components/Form';
 import CardPreview from '../components/CardPreview';
-// import CompleteState from './CompleteState';
+import CompleteState from './CompleteState';
 
 function App() {
   const [dataUser, setDataUser] = useState({
@@ -21,6 +21,15 @@ function App() {
     year: '',
     cvc: '',
   });
+
+  //RETOENAR COMPLETE COMPONENTE
+  // const [completeOk, setCompleteOk] = useState({
+  //   name: false,
+  //   cardNumber: false,
+  //   month: false,
+  //   year: false,
+  //   cvc: false,
+  // });
 
   //LLAMA FUNCION QUE GUARDA VALOR INPUT Y FUNCION DE VALIDACION, ejecuta la función al pulsar el botón de confirm
   const handleForm = (e) => {
@@ -48,6 +57,7 @@ function App() {
     } else if (!regexCardNumber.test(dataUser.cardNumber)) {
       errors.cardNumber = '16 numbers only';
     }
+
     // --> .replace(' ', '') Si el usuario mete un espacio quitalo
 
     if (dataUser.month === '') {
