@@ -23,6 +23,7 @@
        line-height: 20px;
        border-radius: 10px; 
        display: flex;
+       width: 80vw;
     }
 
     &__cardFront {
@@ -31,8 +32,11 @@
        z-index: 10;
        flex-direction: column;
        padding: 20px;
-       
+       width: 80vw;
     }
+    
+       
+    
 
     &__cardBack {
         background-image: url(../../images/bg-card-back.png);
@@ -59,6 +63,7 @@
         display: flex;
         justify-content: space-between;
         margin-top: 20px;
+        padding: 5px;
     }
 
     &__name {
@@ -75,8 +80,8 @@
         font-size: 10px;
         margin-right: 60px;
         letter-spacing: 1px;
-    }
-}
+    }}
+
 
 
 @media all and (min-width:768px) {

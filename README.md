@@ -1,6 +1,3 @@
-EN PROCESO.....
-
-
 # Frontend Mentor - Interactive card details form solution
 
 This is a solution to the [Interactive card details form challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/interactive-card-details-form-XpS8cKZDWw). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
@@ -23,19 +20,17 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/veroisla/Interactive-card-details-form-Frontend-Mentor)
-- Live Site URL: [Add live site URL here](https://veroisla.github.io/Interactive-card-details-form-Frontend-Mentor/)
+- Solution URL: (https://github.com/veroisla/Interactive-card-details-form-Frontend-Mentor)
+- Live Site URL: (https://veroisla.github.io/Interactive-card-details-form-Frontend-Mentor/)
 
 ### Built with
 
 - Semantic HTML5 markup
-- CSS custom properties
+- CSS, SASS
 - Flexbox
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
+- React
 
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
 
 ## Author
 
@@ -43,3 +38,11 @@ If you want more help with writing markdown, we'd recommend checking out [The Ma
 - Frontend Mentor - [@veroisla](https://github.com/veroisla)
 - Twitter - [@Vero__Isla](https://twitter.com/Vero__Isla)
 
+## Preview Mobile
+
+<img src="/src/images/preview/mobile__version.PNG">
+<img src="/src/images/preview/mobile__versionErrors.PNG">
+
+## Preview Desktop
+<img src="/src/images/preview/desktop__errors.PNG">
+<img src="/src/images/preview/complete__desktop.PNG">
