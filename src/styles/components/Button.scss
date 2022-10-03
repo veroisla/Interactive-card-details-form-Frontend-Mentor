@@ -11,3 +11,10 @@
     margin-top: 20px;
     width: 100%;
 }
+
+@media all and (min-width:768px) {
+    .confirmButton{
+       font-size: 20px; 
+       width: 500px;
+    } 
+}

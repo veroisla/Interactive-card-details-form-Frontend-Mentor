@@ -4,7 +4,7 @@
 .form {
     
     &__sectionForm {
-      margin: 180px 20px 30px 20px;
+      margin: 140px 20px 30px 20px;
       display: flex;
       flex-direction: column;
     }
@@ -14,14 +14,13 @@
         letter-spacing: 2px;
         margin-bottom: 8px;
         color: $--color-super-dark-violet;
-        
     }
 
     &__input {
         border: 1px solid $--color-light-violet;
         border-radius: 7px;
         padding: 8px;
-        margin-bottom: 10px;
+        margin-bottom: 14px;
 
         &:focus-visible {
            outline-color: $--color-gradient-purple;
@@ -79,7 +78,7 @@
     &__error {
         color: $--color-red;
         font-size: 10px;
-        margin-bottom: 5px;
+        margin-bottom: 8px;
     }
 }
 
@@ -88,6 +87,28 @@
         &__sectionForm {
            margin: 0 200px 0 0;
            width: 600px;
+        }
+
+        &__label {
+            font-size: 20px;
+        }
+
+        &__input {
+            font-size: 20px;
+        }
+
+        &__input--date {
+            width: 140px;
+            margin-right: 20px;
+        }
+
+        &__input--cvc {
+            width: 250px;
+        }
+
+        &__error {
+            font-size: 14px;
+
         }
     }
 }

@@ -7,7 +7,7 @@ function CardPreview(props) {
     <section className="preview">
       <div className="preview__cardsContainer">
         {/* PREVIEW CARD FRONT */}
-        <div className="preview__cardFront">
+        <div className="preview__cardFront preview__card">
           <img className="preview__cardLogo" src={cardLogo} alt="Card Logo" />
           <span className="preview__cardNumber">
             {props.dataUser.cardNumber
@@ -34,7 +34,7 @@ function CardPreview(props) {
           </div>
         </div>
         {/* PREVIEW CARD BACK */}
-        <div className="preview__cardBack">
+        <div className="preview__cardBack preview__card">
           <span className="preview__cvc">{props.dataUser.cvc || '000'}</span>
         </div>
       </div>

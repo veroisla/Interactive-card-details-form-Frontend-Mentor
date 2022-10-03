@@ -16,7 +16,7 @@
 
     &__thankText {
         text-transform: uppercase;
-        font-weight: 700;
+        font-weight: 400;
         font-size: 30px;
         color: $--color-super-dark-violet;
         letter-spacing: 3px;
@@ -30,6 +30,18 @@
     }
 }
 
-.hidden {
-    display: none;
+@media all and (min-width: 768px) {
+
+    .complete {
+        margin: 0 200px 0 0;
+
+        &__thankText  {
+            font-size: 40px;
+        }
+
+        &__addedText {
+            font-size: 22px;
+        }
+
+    }
 }
