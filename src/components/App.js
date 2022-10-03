@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Form from '../components/Form';
 import CardPreview from '../components/CardPreview';
 import '../styles/components/App.scss';
-// import CompleteState from './CompleteState';
+import CompleteState from './CompleteState';
 
 function App() {
   const [dataUser, setDataUser] = useState({
@@ -90,7 +90,6 @@ function App() {
   //FUNCIÓN PREVENIR ENVÍO POR DEFECTO
   const handleSubmit = (ev) => {
     ev.preventDefault(ev);
-    validationsForm(setErrors);
   };
 
   //FUNCIÓN VALOR INPUT --> Actualiza la tarjeta con los datos del formulario
