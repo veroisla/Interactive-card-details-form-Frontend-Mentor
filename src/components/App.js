@@ -23,7 +23,7 @@ function App() {
     cvc: '',
   });
 
-  //RETOENAR COMPLETE COMPONENTE
+  //RETORNAR COMPLETE COMPONENTE
   const [completeOk, setCompleteOk] = useState({
     name: false,
     cardNumber: false,
@@ -138,4 +138,42 @@ function App() {
 
 export default App;
 
-//holaaaaa
+//EXPLICACION CAMBIAR DE FORM A COMPLETE, UTILIZANDO TRUE/FALSE
+// 1. Comienzo con todos los valores en false
+
+// const [completeOk, setCompleteOk] = useState({
+//   name: false,
+//   cardNumber: false,
+//   month: false,
+//   year: false,
+//   cvc: false,
+// });
+
+// 2. En la función que valida compruebo que cumpla las condiciones, y digo si es diferente a vacio cambiamelo a true, pero primero me ha comprobado que cumpla todo.
+
+// if (dataUser.name === '') {
+//   errors.name = 'Can´t be blank';
+// } else if (!regexName.test(dataUser.name)) {
+//   errors.name = 'Invalid format';
+// } else if (errors.name !== '') {
+//   completeOk.name = true;
+// }
+
+// 3. En el return digo si cada uno de los valores es true muestra el complete y si no muestra el formulario. Como siempre comienzan en false, siempre me va a mostrar primero el formulario.
+
+// {completeOk.name === true &&
+//   completeOk.cardNumber === true &&
+//   completeOk.month === true &&
+//   completeOk.year === true &&
+//   completeOk.cvc === true ? (
+//     <CompleteState dataUser={dataUser} />
+//   ) : (
+//     <Form
+//       handleSubmit={handleSubmit}
+//       handleInput={handleInput}
+//       dataUser={dataUser}
+//       handleForm={handleForm}
+//       errors={errors}
+//     />
+
+// 4. La funcion de validar la estoy ejecutando cuando doy al boton de confirm.
