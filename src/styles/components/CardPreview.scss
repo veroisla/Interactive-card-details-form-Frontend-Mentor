@@ -102,7 +102,7 @@
         }
 
         &__nameAndDate {
-            margin-top: 90px;
+            margin-top: 70px;
         }
 
         &__cardLogo {
@@ -111,6 +111,7 @@
 
         &__cardNumber {
             font-size: 18px;
+            margin-top: 40px;
         }
         &__name {
             font-size: 18px;
@@ -118,13 +119,18 @@
 
         &__date {
             font-size: 18px;
-        }
+        }   
+     
 
        //CARD BACK
 
         &__cardBack {
             height: 15.31rem;
             width: 27.93rem;
+        }
+
+        &__cvc {
+            font-size: 14px;
         }
         
     }

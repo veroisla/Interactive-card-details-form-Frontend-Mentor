@@ -86,8 +86,8 @@
 @media all and (min-width: 768px) {
     .form {
         &__sectionForm {
-            margin: 0;
-            padding: 100px;
+           margin: 0 200px 0 0;
+           width: 600px;
         }
     }
 }

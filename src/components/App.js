@@ -24,13 +24,13 @@ function App() {
   });
 
   //RETOENAR COMPLETE COMPONENTE
-  // const [completeOk, setCompleteOk] = useState({
-  //   name: false,
-  //   cardNumber: false,
-  //   month: false,
-  //   year: false,
-  //   cvc: false,
-  // });
+  const [completeOk, setCompleteOk] = useState({
+    name: false,
+    cardNumber: false,
+    month: false,
+    year: false,
+    cvc: false,
+  });
 
   //LLAMA FUNCION QUE GUARDA VALOR INPUT Y FUNCION DE VALIDACION, ejecuta la función al pulsar el botón de confirm
   const handleForm = (e) => {
@@ -51,12 +51,16 @@ function App() {
       errors.name = 'Can´t be blank';
     } else if (!regexName.test(dataUser.name)) {
       errors.name = 'Invalid format';
+    } else if (errors.name !== '') {
+      completeOk.name = true;
     }
 
     if (dataUser.cardNumber === '') {
       errors.cardNumber = 'Can´t be blank';
     } else if (!regexCardNumber.test(dataUser.cardNumber)) {
       errors.cardNumber = '16 numbers only';
+    } else if (errors.cardNumber !== '') {
+      completeOk.cardNumber = true;
     }
 
     // --> .replace(' ', '') Si el usuario mete un espacio quitalo
@@ -67,6 +71,8 @@ function App() {
       errors.month = 'Numbers only';
     } else if (!regexMonth.test(dataUser.month)) {
       errors.month = 'Invalid month';
+    } else if (errors.month !== '') {
+      completeOk.month = true;
     }
 
     if (dataUser.year === '') {
@@ -75,6 +81,8 @@ function App() {
       errors.year = 'Numbers only';
     } else if (!regexYear.test(dataUser.year)) {
       errors.year = 'Invalid date';
+    } else if (errors.year !== '') {
+      completeOk.year = true;
     }
 
     if (dataUser.cvc === '') {
@@ -83,6 +91,8 @@ function App() {
       errors.cvc = 'Numbers only';
     } else if (!regexCvc.test(dataUser.cvc)) {
       errors.cvc = 'Need 3 numbers';
+    } else if (errors.cvc !== '') {
+      completeOk.cvc = true;
     }
     return errors;
   };
@@ -106,15 +116,21 @@ function App() {
       <div className="previewAndForm">
         <CardPreview dataUser={dataUser} />
 
-        {/* <CompleteState dataUser={dataUser} /> */}
-
-        <Form
-          handleSubmit={handleSubmit}
-          handleInput={handleInput}
-          dataUser={dataUser}
-          handleForm={handleForm}
-          errors={errors}
-        />
+        {completeOk.name === true &&
+        completeOk.cardNumber === true &&
+        completeOk.month === true &&
+        completeOk.year === true &&
+        completeOk.cvc === true ? (
+          <CompleteState dataUser={dataUser} />
+        ) : (
+          <Form
+            handleSubmit={handleSubmit}
+            handleInput={handleInput}
+            dataUser={dataUser}
+            handleForm={handleForm}
+            errors={errors}
+          />
+        )}
       </div>
     </>
   );
